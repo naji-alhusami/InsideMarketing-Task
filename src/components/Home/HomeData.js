@@ -1,7 +1,6 @@
 export const HomeData = [
   {
     id: "1",
-    cartImg: "../../assets/golden.png",
     header: "Gebührenfrei Mastercard Gold",
     advantage1: "Hohe Annahmequote",
     advantage2: "Gebührenfreie Gold-Kreditkarte",
@@ -9,7 +8,6 @@ export const HomeData = [
   },
   {
     id: "2",
-    cartImg: "../../assets/golden.png",
     header: "Gebührenfrei Mastercard Gold",
     advantage1: "Hohe Annahmequote",
     advantage2: "Gebührenfreie Gold-Kreditkarte",

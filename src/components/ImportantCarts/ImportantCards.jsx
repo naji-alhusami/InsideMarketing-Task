@@ -1,19 +1,22 @@
-import { HomeData } from "./HomeData";
 import { FaCheck } from "react-icons/fa";
+import RatingIcon from "../../assets/RatingIcon";
 import golden from "../../assets/golden.png";
 import golden2 from "../../assets/golden-2.png";
-import RatingIcon from "../../assets/RatingIcon";
-import ApplePay from "../../assets/ApplePay";
-import GooglePay from "../../assets/GooglePay";
+import { ImportantCartsData } from "./ImportantCardsData";
+import { IoIosArrowUp } from "react-icons/io";
+import { useState } from "react";
 
-const Home = () => {
+const ImportantCards = () => {
+  const [showDetails, setShowDetails] = useState(false);
+
+  const showDetailsHandler = () => {
+    setShowDetails(!showDetails);
+  };
+
   return (
-    <div className="bg-gray-100 z-10 sm:px-4 xl:p-16">
-      <h1 className="text-center text-sky-950 font-bold text-3xl md:text-5xl p-4">
-        Kreditkarten-Vergleich: Top Kreditkarten 2024
-      </h1>
-      <div className="w-full flex flex-col justify-center items-center lg:flex-row lg:gap-x-4">
-        {HomeData.map((data) => (
+    <div className=" z-10 sm:px-4 xl:p-16">
+      <div className="w-full flex flex-col justify-center items-center">
+        {ImportantCartsData.map((data) => (
           <div
             key={data.id}
             className="w-full flex flex-row justify-center items-center my-4"
@@ -23,9 +26,9 @@ const Home = () => {
                 data.id === "1"
                   ? "border border-blue-500"
                   : data.id === "2"
-                  ? "border-none"
+                  ? "border-gray-100"
                   : null
-              }  rounded-md shadow-md hover:shadow-xl`}
+              }  rounded-md shadow-lg hover:shadow-xl`}
             >
               <div className="flex flex-row justify-between">
                 <div className="flex flex-col">
@@ -47,13 +50,6 @@ const Home = () => {
                       <h1 className="text-sm font-bold text-sky-950 py-4  ml-4 mt-4">
                         {data.header}
                       </h1>
-                    </div>
-                    <div className="relative bg-blue-400 text-white mb-12 shadow-lg rounded-r-lg px-4 py-2 ml-0 sm:mb-20 sm:mt-6 sm:ml-[-10px] sm:rounded-b-lg">
-                      <div className=" sm:w-0 sm:h-0 sm:border-t-[10px] sm:border-t-transparent sm:border-r-[10px] sm:border-r-violet-900 sm:absolute sm:left-0 sm:top-[-10px]"></div>
-                      <span>
-                        <p>Top Empfehlung:</p>
-                        <p>Gebührenfrei Mastercard Gold</p>
-                      </span>
                     </div>
                   </div>
                   <div className="text-gray-500  ml-4 mt-4">
@@ -89,16 +85,29 @@ const Home = () => {
                   </div>
                 </div>
               </div>
-              <div className="flex flex-col justify-center items-end sm:flex-row sm:justify-between sm:pl-4">
-                <div className="float-right flex flex-row my-8  mr-4 mt-4">
-                  <ApplePay />
-                  <GooglePay />
-                </div>
-                <div className="w-full flex items-center justify-center p-4  sm:justify-end">
-                  <button className="w-full bg-blue-800 text-white px-6 py-4 rounded-lg sm:w-[190px]">
-                    Zum Angebot
+              <div className="w-full flex items-center justify-center p-4 sm:justify-end">
+                <button className="w-full bg-blue-800 text-white px-6 py-4 rounded-lg sm:w-[190px]">
+                  Zum Angebot
+                </button>
+              </div>
+              <div className="w-full border border-gray-200"></div>
+              <div className="flex flex-row justify-center items-center py-4">
+                {showDetails ? (
+                  <button
+                    onClick={showDetailsHandler}
+                    className="flex flex-row justify-center items-center"
+                  >
+                    Mehr Info
+                    <IoIosArrowUp />
                   </button>
-                </div>
+                ) : (
+                  <button
+                    className="flex flex-row justify-center items-center"
+                    onClick={showDetailsHandler}
+                  >
+                    Weniger Info <IoIosArrowUp />
+                  </button>
+                )}
               </div>
             </div>
           </div>
@@ -108,4 +117,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default ImportantCards;
