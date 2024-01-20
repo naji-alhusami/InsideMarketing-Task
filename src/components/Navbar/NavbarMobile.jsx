@@ -11,16 +11,15 @@ const NavbarMobile = ({ isToggled }) => {
   }
 
   return (
-    <div className="absolute w-full top-16 left-0 text-slate-500">
+    <div className="absolute w-full top-16 left-0 text-slate-500 z-20 bg-white">
       {isToggled && (
         <ul>
           {NavbarItemsData.map((header) => (
-            <>
+            <div key={header.id}>
               <div
                 className={`w-full cursor-pointer ${
                   selectedHeader === header.id ? "" : "border-b border-gray-300"
                 }`}
-                key={header.id}
               >
                 <li
                   onClick={() => showNavbarItemsHandler(header.id)}
@@ -62,7 +61,7 @@ const NavbarMobile = ({ isToggled }) => {
                   </div>
                 )}
               </div>
-            </>
+            </div>
           ))}
         </ul>
       )}
