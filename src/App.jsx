@@ -1,9 +1,13 @@
-import "./App.css";
+// import "./App.css";
+import Navbar from "./components/Navbar/Navbar";
 
 function App() {
   return (
     <>
-      <h2 className="font-bold text-3xl">naji</h2>
+      <div className="min-h-screen relative">
+        <div className="bg-emerald-overlay"></div>
+        <Navbar />
+      </div>
     </>
   );
 }
