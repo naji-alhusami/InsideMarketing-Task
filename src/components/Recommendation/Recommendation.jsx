@@ -15,7 +15,7 @@ const Recommendation = () => {
   };
 
   return (
-    <div className="p-16 flex flex-col bg-gray-100">
+    <div className="p-4 py-12 flex flex-col bg-gray-100">
       <h1 className="font-bold text-sky-950 text-3xl ">Unsere Empfehlung</h1>
       {ImportantCardsData.map((data) => {
         if (data.bank === "Gebührenfrei Mastercard Gold") {
