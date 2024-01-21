@@ -37,7 +37,7 @@ const Home = () => {
                         className="w-[120px] h-[80px] ml-4 mt-4"
                       />
 
-                      <h1 className="text-sm font-bold text-sky-950 py-4  ml-4 mt-4">
+                      <h1 className="text-center text-sm font-bold text-sky-950 py-4  mt-4">
                         {data.header}
                       </h1>
                     </div>
@@ -54,12 +54,20 @@ const Home = () => {
                       <FaCheck className="mr-2" />
                       <p>{data.advantage1}</p>
                     </div>
-                    <div className="flex flex-row items-center">
+                    <div className="flex flex-row items-center py-2">
                       <FaCheck className="mr-2" />
                       <p>{data.advantage2}</p>
                       {data.advantage2 ===
                       "Inkl. kostenlose Reiseversicherungen" ? (
-                        <GrCircleInformation />
+                        <div className="relative group">
+                          <GrCircleInformation className="cursor-pointer" />
+                          <div className="hidden w-[220px] group-hover:block absolute bg-white text-black border border-black text-sm py-1 px-2 rounded-md bottom-6 left-6 transform -translate-x-1/2 shadow-lg z-10">
+                            Wenn Du Deine Reise nicht antreten kannst, Du
+                            während einer Reise krank wirst oder Dein Gepäck
+                            abhanden kommt, entstehen Dir keine Kosten.
+                            {/* <div className="absolute top-10 left-[7.7rem] w-0 h-0  border-l-[px] border-l-black border-t-[15px] border-t-white border-r-[10px] border-r-transparent"></div> */}
+                          </div>
+                        </div>
                       ) : null}
                     </div>
                     <div className="flex flex-row items-center">
@@ -92,7 +100,7 @@ const Home = () => {
                   <GooglePay />
                 </div>
                 <div className="w-full flex items-center justify-center p-4  sm:justify-end">
-                  <button className="w-full bg-blue-800 text-white px-6 py-4 rounded-lg sm:w-[190px]">
+                  <button className="w-full bg-blue-800 text-white px-6 py-4 rounded-lg sm:w-[190px] hover:bg-blue-900">
                     Zum Angebot
                   </button>
                 </div>

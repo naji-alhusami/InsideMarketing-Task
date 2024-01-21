@@ -53,9 +53,15 @@ const ImportantCards = () => {
                       </div>
                       <div className="hidden lg:flex lg:flex-col lg:justify-center lg:items-center lg:pb-4">
                         <span className="font-bold">{data.WithdrawalFees}</span>
-                        <span className="flex flex-row items-center justify-center">
-                          Abhebegebühren <GrCircleInformation className="pl-1" />
-                        </span>
+                        <div className="relative group">
+                          <span className="flex flex-row items-center justify-center">
+                            Abhebegebühren{" "}
+                            <GrCircleInformation className="pl-1 cursor-pointer" />
+                          </span>
+                          <div className="hidden w-[220px] group-hover:block absolute bg-white text-black border border-black text-sm py-1 px-2 rounded-md bottom-6 left-32 transform -translate-x-1/2 shadow-lg z-10">
+                            {data.info}
+                          </div>
+                        </div>
                         <span className="font-bold">{data.interest}</span>
                         <span>Zins</span>
                       </div>
@@ -73,7 +79,7 @@ const ImportantCards = () => {
                             {data.advantage1}
                           </p>
                         </div>
-                        <div className="flex flex-row items-center">
+                        <div className="flex flex-row items-center py-2">
                           <FaCheck className="mr-2" />
                           <p
                             className={`${
@@ -100,10 +106,10 @@ const ImportantCards = () => {
                       <div className="flex flex-row justify-between">
                         <div className="relative pt-4 pr-4">
                           <RatingIcon />
-                          <span className="font-bold text-sky-950 text-2xl absolute top-10 left-7">
+                          <span className="font-bold text-sky-950 text-2xl absolute top-10 left-7 ">
                             {data.rate}
                           </span>
-                          <span className="absolute top-20 left-4 text-gray-500">
+                          <span className="absolute top-20 left-4 text-gray-500 ">
                             {data.rateInWord}
                           </span>
                         </div>

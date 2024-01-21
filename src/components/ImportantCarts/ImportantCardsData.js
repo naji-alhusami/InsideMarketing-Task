@@ -16,6 +16,7 @@ export const ImportantCardsData = [
     interest: "24,69 %",
     rate: "1.1",
     rateInWord: "Exzellent",
+    info: "Die Bank erhebt keine pauschale Gebühr auf Bargeldabhebungen. Stattdessen fallen auf ausgezahlte Beträge ab dem ersten Tag Sollzinsen an. Eventuelle Gebühren der Automatenbetreiber werden nicht erstattet.",
   },
 
   {
@@ -29,6 +30,7 @@ export const ImportantCardsData = [
     interest: "24,40 %",
     rate: "1.1",
     rateInWord: "Exzellent",
+    info: "Abhebungen sind seitens Bank Norwegian an allen VISA Geldautomaten weltweit kostenlos. Eventuelle Gebühren der Automatenbetreiber werden nicht erstattet.",
   },
 
   {
@@ -42,6 +44,7 @@ export const ImportantCardsData = [
     interest: "24,79 %",
     rate: "1.2",
     rateInWord: "Sehr gut",
+    info: "Die TF Bank erhebt keine pauschale Gebühr auf Bargeldabhebungen. Stattdessen fallen auf ausgezahlte Beträge ab dem ersten Tag Sollzinsen an. Eventuelle Gebühren der Automatenbetreiber werden nicht erstattet.",
   },
 
   {
@@ -55,6 +58,7 @@ export const ImportantCardsData = [
     interest: "24,60 %",
     rate: "1.7",
     rateInWord: "Gut",
+    info: "Barabhebung in Euro kosten 3,00 % des abgehobenen Betrags, mind. 3,00 €. Zusätzlich fallen ab dem ersten Tag Zinsen an. Eventuelle Gebühren der Automatenbetreiber werden nicht erstattet.",
   },
 
   {
@@ -68,5 +72,6 @@ export const ImportantCardsData = [
     interest: "23,13 %",
     rate: "1.7",
     rateInWord: "Gut",
+    info: "Abhebungen mit der Barclays Visa sind seitens Barclays an allen VISA Geldautomaten weltweit kostenlos. Eventuelle Gebühren der Automatenbetreiber werden nicht erstattet.",
   },
 ];
