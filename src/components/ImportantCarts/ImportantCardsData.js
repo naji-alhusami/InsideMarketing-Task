@@ -1,7 +1,7 @@
-export const ImportantCartsData = [
+export const ImportantCardsData = [
   {
     id: "1",
-    header: "Gebührenfrei Mastercard Gold",
+    bank: "Gebührenfrei Mastercard Gold",
     advantage1: "Gold-Karte mit Versicherungspaket",
     advantage2: "Flexible Rückzahlung",
     advantage3: "Einfache Beantragung",
@@ -9,7 +9,7 @@ export const ImportantCartsData = [
 
   {
     id: "2",
-    header: "Bank Norwegian Kreditkarte",
+    bank: "Bank Norwegian Kreditkarte",
     advantage1: "10 € Startguthaben",
     advantage2: "Weltweit kostenlos bezahlen & abheben",
     advantage3: "Kreditlimit bis 10.000 €",

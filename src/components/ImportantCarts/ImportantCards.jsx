@@ -2,21 +2,24 @@ import { FaCheck } from "react-icons/fa";
 import RatingIcon from "../../assets/RatingIcon";
 import golden from "../../assets/golden.png";
 import golden2 from "../../assets/golden-2.png";
-import { ImportantCartsData } from "./ImportantCardsData";
-import { IoIosArrowUp } from "react-icons/io";
+import { ImportantCardsData } from "./ImportantCardsData";
+import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 import { useState } from "react";
+import ImportandCardsDetails from "./ImportandCardsDetails";
 
 const ImportantCards = () => {
   const [showDetails, setShowDetails] = useState(false);
-
-  const showDetailsHandler = () => {
+  const [selectedBank, setSelectedBank] = useState("");
+  
+  const showDetailsHandler = (id, bank) => {
     setShowDetails(!showDetails);
+    setSelectedBank(bank);
   };
 
   return (
     <div className=" z-10 sm:px-4 xl:p-16">
       <div className="w-full flex flex-col justify-center items-center">
-        {ImportantCartsData.map((data) => (
+        {ImportantCardsData.map((data) => (
           <div key={data.id} className="w-full">
             <div
               className={`w-full   my-4  bg-white ${
@@ -46,7 +49,7 @@ const ImportantCards = () => {
                           />
                         ) : null}
                         <h1 className="text-sm font-bold text-sky-950  ml-4 mt-4">
-                          {data.header}
+                          {data.bank}
                         </h1>
                       </div>
                       <div className="hidden lg:flex lg:flex-col lg:justify-center lg:pb-4">
@@ -103,26 +106,29 @@ const ImportantCards = () => {
                     </button>
                   </div>
                 </div>
-                <div>
+                <div className="relative">
                   <div className="w-full border border-gray-200"></div>
                   <div className="flex flex-row justify-center items-center py-4">
-                    {showDetails ? (
+                    {showDetails && selectedBank === data.bank ? (
                       <button
-                        onClick={showDetailsHandler}
                         className="flex flex-row justify-center items-center"
+                        onClick={() => showDetailsHandler(data.id, data.bank)}
                       >
-                        Mehr Info
-                        <IoIosArrowUp />
+                        Weniger Info <IoIosArrowUp />
                       </button>
                     ) : (
                       <button
                         className="flex flex-row justify-center items-center"
-                        onClick={showDetailsHandler}
+                        onClick={() => showDetailsHandler(data.id, data.bank)}
                       >
-                        Weniger Info <IoIosArrowUp />
+                        Mehr Info
+                        <IoIosArrowDown />
                       </button>
                     )}
                   </div>
+                  {showDetails && selectedBank === data.bank && (
+                    <ImportandCardsDetails selectedBank={selectedBank} />
+                  )}
                 </div>
               </div>
             </div>
