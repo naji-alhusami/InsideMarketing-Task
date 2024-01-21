@@ -2,11 +2,11 @@ import { useState } from "react";
 import { FaCheck } from "react-icons/fa";
 import { TbLetterX } from "react-icons/tb";
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
+import { GrCircleInformation } from "react-icons/gr";
 
 import ImportandCardsDetails from "./ImportandCardsDetails";
 import RatingIcon from "../../assets/RatingIcon";
 import { ImportantCardsData } from "./ImportantCardsData";
-import { GrCircleInformation } from "react-icons/gr";
 
 const ImportantCards = () => {
   const [openBank, setOpenBank] = useState(null);
@@ -16,7 +16,7 @@ const ImportantCards = () => {
   };
 
   return (
-    <div className=" z-10 sm:px-4 xl:p-16">
+    <div className=" z-10 sm:px-4 lg:p-16">
       <div className="w-full flex flex-col justify-center items-center">
         {ImportantCardsData.map((data) => (
           <div key={data.id} className="w-full">

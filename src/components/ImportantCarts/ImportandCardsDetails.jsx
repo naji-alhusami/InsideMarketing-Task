@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 import React, { useState } from "react";
+import { motion } from "framer-motion";
 
 import { ImportantCartsDetailsData } from "./ImportantCardsDetailsData";
 import { CheckIcon } from "../../assets/CheckIcon";
@@ -20,7 +21,12 @@ const ImportandCardsDetails = ({ selectedBank }) => {
       : null;
 
   return (
-    <div className="flex flex-col flex-wrap px-4 md:flex md:flex-col">
+    <motion.div
+      initial={{ y: -10 }}
+      animate={{ y: selectedBank ? 0 : -100 }}
+      transition={{ duration: 0.5 }}
+      className="flex flex-col flex-wrap px-4 md:flex md:flex-col z-10"
+    >
       <div className="flex flex-row flex-wrap justify-between items-center border-b-2 border-gray-300">
         {bankDetails.length > 0 &&
           bankDetails[0].details.map((data) => (
@@ -38,11 +44,6 @@ const ImportandCardsDetails = ({ selectedBank }) => {
             </div>
           ))}
       </div>
-      {/* <motion.div
-        initial={{ y: -20 }} // Initial position off-screen
-        animate={{ y: showDetails ? 0 : -1000 }}
-        transition={{ duration: 0.9, ease: "easeOut" }}
-      > */}
       {(selectedDetail === "Allgemein" ||
         selectedDetail === "Bargeld / Bezahlung") &&
         selectedDetailsData && (
@@ -66,7 +67,6 @@ const ImportandCardsDetails = ({ selectedBank }) => {
             </table>
           </div>
         )}
-      {/* </motion.div> */}
       {(selectedDetail === "Versicherung" || selectedDetail === "Bonus") &&
         selectedDetailsData && (
           <div className="py-6">
@@ -98,7 +98,7 @@ const ImportandCardsDetails = ({ selectedBank }) => {
           </table>
         </div>
       )}
-    </div>
+    </motion.div>
   );
 };
 

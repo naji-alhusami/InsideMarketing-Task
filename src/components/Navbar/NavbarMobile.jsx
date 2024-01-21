@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 import { useState } from "react";
+import { motion } from "framer-motion";
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 
 import { NavbarItemsData } from "./NavbarItemsData";
@@ -12,7 +13,12 @@ const NavbarMobile = ({ isToggled }) => {
   }
 
   return (
-    <div className="absolute w-full top-16 left-0 text-slate-500 z-50 bg-white">
+    <motion.div
+      initial={{ y: -10 }}
+      animate={{ y: isToggled ? 0 : -100 }}
+      transition={{ duration: 0.5 }}
+      className="absolute w-full top-16 left-0 text-slate-500 z-50 bg-white"
+    >
       {isToggled && (
         <ul>
           {NavbarItemsData.map((header) => (
@@ -66,7 +72,7 @@ const NavbarMobile = ({ isToggled }) => {
           ))}
         </ul>
       )}
-    </div>
+    </motion.div>
   );
 };
 

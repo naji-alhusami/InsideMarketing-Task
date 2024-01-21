@@ -12,7 +12,7 @@ const Home = () => {
       <h1 className="text-center text-sky-950 font-bold text-3xl md:text-5xl p-12 pt-24">
         Kreditkarten-Vergleich: Top Kreditkarten 2024
       </h1>
-      <div className="w-full flex flex-col justify-center items-center lg:flex-row lg:gap-x-4">
+      <div className="w-full flex flex-col justify-center items-center lg:flex-row lg:gap-x-4 lg:px-10">
         {HomeData.map((data) => (
           <div
             key={data.id}
@@ -65,7 +65,6 @@ const Home = () => {
                             Wenn Du Deine Reise nicht antreten kannst, Du
                             während einer Reise krank wirst oder Dein Gepäck
                             abhanden kommt, entstehen Dir keine Kosten.
-                            {/* <div className="absolute top-10 left-[7.7rem] w-0 h-0  border-l-[px] border-l-black border-t-[15px] border-t-white border-r-[10px] border-r-transparent"></div> */}
                           </div>
                         </div>
                       ) : null}
