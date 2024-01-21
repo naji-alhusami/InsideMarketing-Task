@@ -9,12 +9,10 @@ import { ImportantCardsData } from "./ImportantCardsData";
 import { GrCircleInformation } from "react-icons/gr";
 
 const ImportantCards = () => {
-  const [showDetails, setShowDetails] = useState(false);
-  const [selectedBank, setSelectedBank] = useState("");
+  const [openBank, setOpenBank] = useState(null);
 
-  const showDetailsHandler = (id, bank) => {
-    setShowDetails(!showDetails);
-    setSelectedBank(bank);
+  const toggleDetailsVisibility = (bank) => {
+    setOpenBank((prevBank) => (prevBank === bank ? null : bank));
   };
 
   return (
@@ -132,25 +130,23 @@ const ImportantCards = () => {
                 <div className="relative">
                   <div className="w-full border border-gray-200"></div>
                   <div className="flex flex-row justify-center items-center py-4">
-                    {showDetails && selectedBank === data.bank ? (
-                      <button
-                        className="flex flex-row justify-center items-center"
-                        onClick={() => showDetailsHandler(data.id, data.bank)}
-                      >
-                        Weniger Info <IoIosArrowUp />
-                      </button>
-                    ) : (
-                      <button
-                        className="flex flex-row justify-center items-center"
-                        onClick={() => showDetailsHandler(data.id, data.bank)}
-                      >
-                        Mehr Info
-                        <IoIosArrowDown />
-                      </button>
-                    )}
+                    <button
+                      className="flex flex-row justify-center items-center"
+                      onClick={() => toggleDetailsVisibility(data.bank)}
+                    >
+                      {openBank === data.bank ? (
+                        <>
+                          Weniger Info <IoIosArrowUp />
+                        </>
+                      ) : (
+                        <>
+                          Mehr Info <IoIosArrowDown />
+                        </>
+                      )}
+                    </button>
                   </div>
-                  {showDetails && selectedBank === data.bank && (
-                    <ImportandCardsDetails selectedBank={selectedBank} />
+                  {openBank === data.bank && (
+                    <ImportandCardsDetails selectedBank={data.bank} />
                   )}
                 </div>
               </div>

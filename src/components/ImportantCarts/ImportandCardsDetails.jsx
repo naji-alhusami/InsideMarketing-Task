@@ -6,7 +6,7 @@ import { CheckIcon } from "../../assets/CheckIcon";
 import { FalseIcon } from "../../assets/FlaseIcon";
 
 const ImportandCardsDetails = ({ selectedBank }) => {
-  const [selectedDetail, setSelectedDetail] = useState("");
+  const [selectedDetail, setSelectedDetail] = useState("Allgemein");
 
   const bankDetails = ImportantCartsDetailsData.filter(
     (bankName) => bankName.bank === selectedBank
