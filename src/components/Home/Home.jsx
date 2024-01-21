@@ -1,7 +1,5 @@
 import { HomeData } from "./HomeData";
 import { FaCheck } from "react-icons/fa";
-import golden from "../../assets/golden.png";
-import golden2 from "../../assets/golden-2.png";
 import RatingIcon from "../../assets/RatingIcon";
 import ApplePay from "../../assets/ApplePay";
 import GooglePay from "../../assets/GooglePay";
@@ -31,19 +29,12 @@ const Home = () => {
                 <div className="flex flex-col">
                   <div className="flex flex-col sm:flex sm:flex-row-reverse">
                     <div className="flex flex-col sm:justify-center sm:items-center">
-                      {data.id === "1" ? (
-                        <img
-                          src={golden}
-                          alt="golden-cart"
-                          className="w-[120px] h-[80px] ml-4 mt-4"
-                        />
-                      ) : data.id === "2" ? (
-                        <img
-                          src={golden2}
-                          alt="golden-cart-2"
-                          className="w-[120px] h-[80px] ml-4 mt-4"
-                        />
-                      ) : null}
+                      <img
+                        src={data.bankImg}
+                        alt="bank-cart"
+                        className="w-[120px] h-[80px] ml-4 mt-4"
+                      />
+
                       <h1 className="text-sm font-bold text-sky-950 py-4  ml-4 mt-4">
                         {data.header}
                       </h1>

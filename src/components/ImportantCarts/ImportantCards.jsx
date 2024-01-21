@@ -1,7 +1,6 @@
 import { FaCheck } from "react-icons/fa";
 import RatingIcon from "../../assets/RatingIcon";
-import golden from "../../assets/golden.png";
-import golden2 from "../../assets/golden-2.png";
+
 import { ImportantCardsData } from "./ImportantCardsData";
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 import { useState } from "react";
@@ -10,7 +9,7 @@ import ImportandCardsDetails from "./ImportandCardsDetails";
 const ImportantCards = () => {
   const [showDetails, setShowDetails] = useState(false);
   const [selectedBank, setSelectedBank] = useState("");
-  
+
   const showDetailsHandler = (id, bank) => {
     setShowDetails(!showDetails);
     setSelectedBank(bank);
@@ -35,19 +34,11 @@ const ImportantCards = () => {
                   <div className="flex flex-row justify-between py-4">
                     <div className="flex flex-col justify-between lg:flex-row">
                       <div className="flex flex-col ">
-                        {data.id === "1" ? (
-                          <img
-                            src={golden}
-                            alt="golden-cart"
-                            className="w-[120px] h-[80px] ml-4 mt-4"
-                          />
-                        ) : data.id === "2" ? (
-                          <img
-                            src={golden2}
-                            alt="golden-cart-2"
-                            className="w-[120px] h-[80px] ml-4 mt-4"
-                          />
-                        ) : null}
+                        <img
+                          src={data.bankImg}
+                          alt="bank-cart"
+                          className="w-[120px] h-[80px] ml-4 mt-4"
+                        />
                         <h1 className="text-sm font-bold text-sky-950  ml-4 mt-4">
                           {data.bank}
                         </h1>
