@@ -12,7 +12,7 @@ const NavbarMobile = ({ isToggled }) => {
   }
 
   return (
-    <div className="absolute w-full top-16 left-0 text-slate-500 z-20 bg-white">
+    <div className="absolute w-full top-16 left-0 text-slate-500 z-50 bg-white">
       {isToggled && (
         <ul>
           {NavbarItemsData.map((header) => (

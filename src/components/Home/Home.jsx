@@ -1,4 +1,5 @@
 import { FaCheck } from "react-icons/fa";
+import { GrCircleInformation } from "react-icons/gr";
 
 import { HomeData } from "./HomeData";
 import RatingIcon from "../../assets/RatingIcon";
@@ -8,7 +9,7 @@ import GooglePay from "../../assets/GooglePay";
 const Home = () => {
   return (
     <div className="bg-gray-100 z-10 sm:px-4 xl:p-16">
-      <h1 className="text-center text-sky-950 font-bold text-3xl md:text-5xl p-12">
+      <h1 className="text-center text-sky-950 font-bold text-3xl md:text-5xl p-12 pt-24">
         Kreditkarten-Vergleich: Top Kreditkarten 2024
       </h1>
       <div className="w-full flex flex-col justify-center items-center lg:flex-row lg:gap-x-4">
@@ -56,6 +57,10 @@ const Home = () => {
                     <div className="flex flex-row items-center">
                       <FaCheck className="mr-2" />
                       <p>{data.advantage2}</p>
+                      {data.advantage2 ===
+                      "Inkl. kostenlose Reiseversicherungen" ? (
+                        <GrCircleInformation />
+                      ) : null}
                     </div>
                     <div className="flex flex-row items-center">
                       <FaCheck className="mr-2" />

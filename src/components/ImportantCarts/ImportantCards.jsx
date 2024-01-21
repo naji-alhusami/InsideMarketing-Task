@@ -6,6 +6,7 @@ import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 import ImportandCardsDetails from "./ImportandCardsDetails";
 import RatingIcon from "../../assets/RatingIcon";
 import { ImportantCardsData } from "./ImportantCardsData";
+import { GrCircleInformation } from "react-icons/gr";
 
 const ImportantCards = () => {
   const [showDetails, setShowDetails] = useState(false);
@@ -52,7 +53,9 @@ const ImportantCards = () => {
                       </div>
                       <div className="hidden lg:flex lg:flex-col lg:justify-center lg:items-center lg:pb-4">
                         <span className="font-bold">{data.WithdrawalFees}</span>
-                        <span>Abhebegebühren</span>
+                        <span className="flex flex-row items-center justify-center">
+                          Abhebegebühren <GrCircleInformation className="pl-1" />
+                        </span>
                         <span className="font-bold">{data.interest}</span>
                         <span>Zins</span>
                       </div>

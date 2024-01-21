@@ -13,9 +13,9 @@ export const HomeData = [
   {
     id: "2",
     bankImg: norwegian,
-    header: "Gebührenfrei Mastercard Gold",
-    advantage1: "Hohe Annahmequote",
-    advantage2: "Gebührenfreie Gold-Kreditkarte",
-    advantage3: "Inkl. Reiseversicherungen",
+    header: "Bank Norwegian Kreditkarte",
+    advantage1: "Weltweit gebührenfrei Geld abheben & bezahlen",
+    advantage2: "Inkl. kostenlose Reiseversicherungen",
+    advantage3: "Dauerhaft keine Jahresgebühr",
   },
 ];
