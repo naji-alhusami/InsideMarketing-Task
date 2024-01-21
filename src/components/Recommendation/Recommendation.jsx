@@ -46,7 +46,7 @@ const Recommendation = () => {
                         </div>
                         <div className="hidden lg:flex lg:flex-col lg:justify-center lg:pb-4">
                           <span className="font-bold text-sky-950 text-2xl float-right">
-                            0.0 $
+                            0.0 €
                           </span>
                           <span className="float-right">Grundgebühr</span>
                         </div>
@@ -59,11 +59,28 @@ const Recommendation = () => {
                         <div className="text-gray-500  ml-4 mt-4">
                           <div className="flex flex-row items-center">
                             <FaCheck className="mr-2" />
-                            <p>{data.advantage1}</p>
+                            <p
+                              className={`${
+                                data.advantage1 ===
+                                "Gold-Karte mit Versicherungspaket"
+                                  ? "text-green-400 bg-green-100 rounded-lg"
+                                  : ""
+                              }`}
+                            >
+                              {data.advantage1}
+                            </p>
                           </div>
                           <div className="flex flex-row items-center">
                             <FaCheck className="mr-2" />
-                            <p>{data.advantage2}</p>
+                            <p
+                              className={`${
+                                data.advantage2 === "Flexible Rückzahlung"
+                                  ? "text-green-400 bg-green-100 rounded-lg"
+                                  : ""
+                              }`}
+                            >
+                              {data.advantage2}
+                            </p>
                           </div>
                           <div className="flex flex-row items-center">
                             <FaCheck className="mr-2" />

@@ -7,7 +7,7 @@ import GooglePay from "../../assets/GooglePay";
 const Home = () => {
   return (
     <div className="bg-gray-100 z-10 sm:px-4 xl:p-16">
-      <h1 className="text-center text-sky-950 font-bold text-3xl md:text-5xl p-4">
+      <h1 className="text-center text-sky-950 font-bold text-3xl md:text-5xl p-12">
         Kreditkarten-Vergleich: Top Kreditkarten 2024
       </h1>
       <div className="w-full flex flex-col justify-center items-center lg:flex-row lg:gap-x-4">
@@ -74,7 +74,7 @@ const Home = () => {
                   </div>
                   <div className="flex flex-col pb-4">
                     <span className="font-bold text-sky-950 text-2xl float-right">
-                      0.0 $
+                      0.0 €
                     </span>
                     <span className="float-right">Grundgebühr</span>
                   </div>

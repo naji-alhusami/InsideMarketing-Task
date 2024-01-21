@@ -3,6 +3,7 @@ import RatingIcon from "../../assets/RatingIcon";
 
 import { ImportantCardsData } from "./ImportantCardsData";
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
+import { TbLetterX } from "react-icons/tb";
 import { useState } from "react";
 import ImportandCardsDetails from "./ImportandCardsDetails";
 
@@ -45,27 +46,49 @@ const ImportantCards = () => {
                       </div>
                       <div className="hidden lg:flex lg:flex-col lg:justify-center lg:pb-4">
                         <span className="font-bold text-sky-950 text-2xl float-right">
-                          0.0 $
+                          0.0 €
                         </span>
                         <span className="float-right">Grundgebühr</span>
                       </div>
                       <div className="hidden lg:flex lg:flex-col lg:justify-center lg:items-center lg:pb-4">
-                        <span className="font-bold">0,00 %</span>
+                        <span className="font-bold">{data.WithdrawalFees}</span>
                         <span>Abhebegebühren</span>
-                        <span className="font-bold">24,79 %</span>
+                        <span className="font-bold">{data.interest}</span>
                         <span>Zins</span>
                       </div>
                       <div className="text-gray-500  ml-4 mt-4">
                         <div className="flex flex-row items-center">
                           <FaCheck className="mr-2" />
-                          <p>{data.advantage1}</p>
+                          <p
+                            className={`${
+                              data.advantage1 ===
+                              "Gold-Karte mit Versicherungspaket"
+                                ? "text-green-400 bg-green-100 rounded-lg"
+                                : ""
+                            }`}
+                          >
+                            {data.advantage1}
+                          </p>
                         </div>
                         <div className="flex flex-row items-center">
                           <FaCheck className="mr-2" />
-                          <p>{data.advantage2}</p>
+                          <p
+                            className={`${
+                              data.advantage2 === "Flexible Rückzahlung" &&
+                              data.bank !== "Extra Karte Mastercard"
+                                ? "text-green-400 bg-green-100 rounded-lg"
+                                : ""
+                            }`}
+                          >
+                            {data.advantage2}
+                          </p>
                         </div>
                         <div className="flex flex-row items-center">
-                          <FaCheck className="mr-2" />
+                          {data.advantage3 === "Niedrigere Annahmequote" ? (
+                            <TbLetterX className="mr-2" />
+                          ) : (
+                            <FaCheck className="mr-2" />
+                          )}
                           <p>{data.advantage3}</p>
                         </div>
                       </div>
@@ -75,16 +98,16 @@ const ImportantCards = () => {
                         <div className="relative pt-4 pr-4">
                           <RatingIcon />
                           <span className="font-bold text-sky-950 text-2xl absolute top-10 left-7">
-                            1.1
+                            {data.rate}
                           </span>
                           <span className="absolute top-20 left-4 text-gray-500">
-                            Exzellent
+                            {data.rateInWord}
                           </span>
                         </div>
                       </div>
                       <div className="lg:hidden flex flex-col pb-4">
                         <span className="font-bold text-sky-950 text-2xl float-right">
-                          0.0 $
+                          0.0 €
                         </span>
                         <span className="float-right">Grundgebühr</span>
                       </div>
