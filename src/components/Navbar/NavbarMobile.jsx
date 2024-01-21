@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import { useState } from "react";
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
+
 import { NavbarItemsData } from "./NavbarItemsData";
 
 const NavbarMobile = ({ isToggled }) => {

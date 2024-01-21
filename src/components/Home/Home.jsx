@@ -1,5 +1,6 @@
-import { HomeData } from "./HomeData";
 import { FaCheck } from "react-icons/fa";
+
+import { HomeData } from "./HomeData";
 import RatingIcon from "../../assets/RatingIcon";
 import ApplePay from "../../assets/ApplePay";
 import GooglePay from "../../assets/GooglePay";

@@ -1,8 +1,10 @@
-import { Link } from "react-router-dom";
-import Logo from "../../assets/Logo.png";
 import { useState } from "react";
+import { Link } from "react-router-dom";
+
 import NavbarMobile from "./NavbarMobile";
 import NavbarIcon from "./NavbarIcon";
+
+import Logo from "../../assets/Logo.png";
 
 const Navbar = () => {
   const [isToggled, setIsToggled] = useState(false);

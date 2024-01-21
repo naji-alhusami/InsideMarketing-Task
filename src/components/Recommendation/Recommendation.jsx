@@ -1,9 +1,10 @@
-import { FaCheck } from "react-icons/fa";
-import { ImportantCardsData } from "../ImportantCarts/ImportantCardsData";
-import RatingIcon from "../../assets/RatingIcon";
 import { useState } from "react";
+import { FaCheck } from "react-icons/fa";
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
+
 import ImportandCardsDetails from "../ImportantCarts/ImportandCardsDetails";
+import RatingIcon from "../../assets/RatingIcon";
+import { ImportantCardsData } from "../ImportantCarts/ImportantCardsData";
 
 const Recommendation = () => {
   const [showDetails, setShowDetails] = useState(false);

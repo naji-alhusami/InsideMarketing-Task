@@ -1,11 +1,11 @@
-import { FaCheck } from "react-icons/fa";
-import RatingIcon from "../../assets/RatingIcon";
-
-import { ImportantCardsData } from "./ImportantCardsData";
-import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
-import { TbLetterX } from "react-icons/tb";
 import { useState } from "react";
+import { FaCheck } from "react-icons/fa";
+import { TbLetterX } from "react-icons/tb";
+import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
+
 import ImportandCardsDetails from "./ImportandCardsDetails";
+import RatingIcon from "../../assets/RatingIcon";
+import { ImportantCardsData } from "./ImportantCardsData";
 
 const ImportantCards = () => {
   const [showDetails, setShowDetails] = useState(false);
