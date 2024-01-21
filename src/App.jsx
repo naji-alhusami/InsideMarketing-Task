@@ -2,6 +2,7 @@
 import Home from "./components/Home/Home";
 import ImportantCards from "./components/ImportantCarts/ImportantCards";
 import Navbar from "./components/Navbar/Navbar";
+import Recommendation from "./components/Recommendation/Recommendation";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
         <Navbar />
         <Home />
         <ImportantCards />
+        <Recommendation />
       </div>
     </>
   );
